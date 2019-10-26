@@ -1,2 +1,4 @@
 # Airplane-Project
-Midterm Projcet
+Midterm Project
+-Main
+-Ticket
