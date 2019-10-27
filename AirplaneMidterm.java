@@ -1,7 +1,9 @@
 //Jenna Lambert, William Eaton, Gabriel Peters, Cody Garthwaite
-//Created: 10-22-19 (JCL)
-//Modified: 10-23-19 (JCL)
-//Modified: 10-24-19 (JCL)
+//Created: 10-22-19 (JL)
+//Modified: 10-23-19 (JL)
+//Modified: 10-24-19 (JL)
+//Modified: 10-25-19 (JL,CG)
+//Modified: 10-26-19 (JL)
 package airplane.midterm;
 import java.util.Scanner;
 public class AirplaneMidterm {
@@ -21,8 +23,8 @@ public class AirplaneMidterm {
         String destinationCity = uin("Destination City:");
         String destinationState;
         do{
-            destinationState = uin("Destination State(2-letter Postal Code):");
-        }while(destinationState.length() > 2);
+            destinationState = uin("Destination State(Valid 2-letter Postal Code):");
+        }while(destinationState.length() > 2 || !destinationState.equalsIgnoreCase("AL") && !destinationState.equalsIgnoreCase("AK") && !destinationState.equalsIgnoreCase("AZ") && !destinationState.equalsIgnoreCase("AR") && !destinationState.equalsIgnoreCase("CA") && !destinationState.equalsIgnoreCase("CO") && !destinationState.equalsIgnoreCase("CT") && !destinationState.equalsIgnoreCase("DE") && !destinationState.equalsIgnoreCase("DC") && !destinationState.equalsIgnoreCase("FL") && !destinationState.equalsIgnoreCase("GA") && !destinationState.equalsIgnoreCase("HI") && !destinationState.equalsIgnoreCase("ID") && !destinationState.equalsIgnoreCase("KS") && !destinationState.equalsIgnoreCase("KY") && !destinationState.equalsIgnoreCase("LA") && !destinationState.equalsIgnoreCase("ME") && !destinationState.equalsIgnoreCase("MD") && !destinationState.equalsIgnoreCase("MA") && !destinationState.equalsIgnoreCase("MI") && !destinationState.equalsIgnoreCase("MN") && !destinationState.equalsIgnoreCase("MS") && !destinationState.equalsIgnoreCase("MO") && !destinationState.equalsIgnoreCase("MT") && !destinationState.equalsIgnoreCase("NE") && !destinationState.equalsIgnoreCase("NV") && !destinationState.equalsIgnoreCase("NH") && !destinationState.equalsIgnoreCase("NJ") && !destinationState.equalsIgnoreCase("NM") && !destinationState.equalsIgnoreCase("NY") && !destinationState.equalsIgnoreCase("NC") && !destinationState.equalsIgnoreCase("NC") && !destinationState.equalsIgnoreCase("ND") && !destinationState.equalsIgnoreCase("OH") && !destinationState.equalsIgnoreCase("OK") && !destinationState.equalsIgnoreCase("OR") && !destinationState.equalsIgnoreCase("PA") && !destinationState.equalsIgnoreCase("RI") && !destinationState.equalsIgnoreCase("SC") && !destinationState.equalsIgnoreCase("SD") && !destinationState.equalsIgnoreCase("TN") && !destinationState.equalsIgnoreCase("TX") && !destinationState.equalsIgnoreCase("UT") && !destinationState.equalsIgnoreCase("VT") && !destinationState.equalsIgnoreCase("VA") && !destinationState.equalsIgnoreCase("WA") && !destinationState.equalsIgnoreCase("WV") && !destinationState.equalsIgnoreCase("WI") && !destinationState.equalsIgnoreCase("WY"));
         //User's Class Choice
         int classChoice = 0;
         String strClassChoice;
