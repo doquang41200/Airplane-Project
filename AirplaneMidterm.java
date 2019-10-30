@@ -5,13 +5,14 @@
 //Modified: 10-25-19 (JL,CG)
 //Modified: 10-26-19 (JL)
 //Modified: 10-28-19 (JL)
+//Modified: 10-29-19 (JL)
 package airplane.midterm;
 import java.util.Scanner;
 public class AirplaneMidterm {
     public static Scanner input = new Scanner(System.in);
     public static Ticket userTicket[] = new Ticket[1000];
     public static void main(String[] args) {
-        System.out.println("Welcome to American Airlines!");
+        System.out.println("Welcome to American Airlines at O'Hare International Airport!");
         int ticketNum = 1;
         String strNumUserTickets = uin("how many tickets you would like to purchase?:");
         int numUserTickets = tryStrToInt(strNumUserTickets);
