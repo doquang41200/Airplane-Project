@@ -31,7 +31,7 @@ public class Receipit {
 
 	public int getNumOfTickets() {
 		return numOfTickets;
-		
+	}	
 	public double getAddOnPrice() {
 		return addOnPrice;
 	}
