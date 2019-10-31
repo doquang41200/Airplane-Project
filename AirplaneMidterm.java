@@ -6,11 +6,24 @@
 //Modified: 10-26-19 (JL)
 //Modified: 10-28-19 (JL)
 //Modified: 10-29-19 (JL)
-package airplane.midterm;
+//Modified: 10-31-19 (WE)
+  
 import java.util.Scanner;
 public class AirplaneMidterm {
     public static Scanner input = new Scanner(System.in);
     public static Ticket userTicket[] = new Ticket[1000];
+    final static double firstClassPrice = 380;
+    final static double economyClassPrice = 320;
+    final static double wifiPrice = 18;
+    final static double inFlightMealPrice = 9;
+    final static double alcoholPrice = 15;
+  static int wifiCount = 0;
+  static int firstClassCount = 0;
+   static int economyClassCount = 0;
+   static int inFlightCount =0;
+   static int alcoholCount = 0;
+  
+   public static double totalPrice;
     public static void main(String[] args) {
         System.out.println("Welcome to American Airlines at O'Hare International Airport!");
         int ticketNum = 1;
@@ -98,14 +111,20 @@ public class AirplaneMidterm {
                 case 1:
                     userTicket[i].classChoice = "First Class";
                     userTicket[i].seat = firstSeat();
+                    firstClassCount+=1;
+                    totalPrice+=firstClassPrice;
                     break;
                 case 2:
                     userTicket[i].classChoice = "Economy Class";
                     userTicket[i].seat = economySeat(userTicket[i].age);
+                    economyClassCount+=1;
+                    totalPrice+=economyClassPrice;
                     break;
                 default:
                     userTicket[i].classChoice = "Economy Class";
                     userTicket[i].seat = economySeat(userTicket[i].age);
+                    economyClassCount+=1;
+                    totalPrice+=economyClassPrice;
                     break;
             }
             //Military
@@ -134,8 +153,52 @@ public class AirplaneMidterm {
             }
             printAll(userTicket[i].ticketNum, userTicket[i].lastName, userTicket[i].firstName, userTicket[i].middleInitial, userTicket[i].age, userTicket[i].destinationCity, userTicket[i].destinationState, userTicket[i].classChoice, userTicket[i].seat, userTicket[i].military, userTicket[i].disability);
             ticketNum++;
+            System.out.println("Would you like wifi access on your flight($18)? (y/n)");
+            String strWifi= input.nextLine();
+            if(strWifi.equalsIgnoreCase("y") || strWifi.equalsIgnoreCase("yes")){
+                totalPrice+=wifiPrice;
+                wifiCount+=1;
+            }
+            else if(strWifi.equalsIgnoreCase("n") || strWifi.equalsIgnoreCase("no")){
+               totalPrice+=0;
+            }
+            else{
+                 totalPrice+=0;
+            }
+            System.out.println("Would you like in flight meals($9)? (y/n)");
+            String strInFlight = input.nextLine();
+            if(strInFlight.equalsIgnoreCase("y") || strInFlight.equalsIgnoreCase("yes")){
+                totalPrice+=inFlightMealPrice;
+                inFlightCount+=1;
+                
+            }
+            else if(strInFlight.equalsIgnoreCase("n") || strInFlight.equalsIgnoreCase("no")){
+               totalPrice+=0;
+            }
+            else{
+                 totalPrice+=0;
+            }
+            System.out.println("Would you like to alcohol on your flight($15)? (y/n)");
+            String strAlcohol = input.nextLine();
+            
+            if(strAlcohol.equalsIgnoreCase("y") || strAlcohol.equalsIgnoreCase("yes")){
+                totalPrice+=alcoholPrice;
+                alcoholCount+=1;
+                
+            }
+            else if(strAlcohol.equalsIgnoreCase("n") || strAlcohol.equalsIgnoreCase("no") ){
+               totalPrice+=0;
+            }
+            else{
+                 totalPrice+=0;
+            }
+            
         }
+        
+      // System.out.printf("================================================\n================================================\nReceipt\nFirst Class Tickets: $%d x %d\nEconomy Class Tickets:\t $%d x %d\nWIFI:\t$ %d x %d\nIn Flight Meals:\t $%s x %s\nAlchohol Charge:\t $%d x %d\nTotal: %s\nMilitary?: %s\nDisability?: %s\n", firstClassPrice, firstClassCount, economyClassPrice, economyClassCount, wifiPrice, wifiCount, inFlightMealPrice, inFlightCount, alcoholPrice, alcoholCount, totalPrice); 
+    System.out.println("================================================\n\t\tRECEIPT\n================================================\nFirst Class Tickets:\t$"+firstClassPrice+" x "+firstClassCount+"\nEconomy Class Tickets:\t$"+economyClassPrice+" x "+economyClassCount+"\nWIFI:\t$"+wifiPrice+" x "+wifiCount+"\nIn Flight Meal:\t$"+inFlightMealPrice+" x "+ inFlightCount + "\nAlchohol:\t$"+alcoholPrice+" x " +alcoholCount+"\n------------------------------------------------\nTotalPrice:\t$" +totalPrice);
     }
+    
     public static String uin(String prompt){
         String uin;
         System.out.printf("Input %s ", prompt);
@@ -194,4 +257,7 @@ public class AirplaneMidterm {
     public static void printAll(int ticketNum, String lastName, String firstName, String middleInitial, int age, String destinationCity, String destinationState, String strClassChoice, String seat, String strMilitary, String strDisability){
         System.out.printf("================================================\nTicket Number: %d\nFull Name: %s, %s %s\nAge: %d\nDestination: %s, %s\nClass Choice: %s\nSeat: %s\nMilitary?: %s\nDisability?: %s\n", ticketNum, lastName, firstName, middleInitial, age, destinationCity, destinationState, strClassChoice, seat, strMilitary, strDisability);
     }
+  /* public static void printPassangerCharges(){
+        System.out.printf("================================================\nFLIGHT CHARGES \nPrice of ticket: %s \nWifi: %d\nIn Flight Meals: %s \nAlcohol: %s\nNumber of drinks(no more then 4): %s", ticketNum, lastName, firstName, middleInitial, age, destinationCity, destinationState, strClassChoice, seat, strMilitary, strDisability);
+    }*/
 }
