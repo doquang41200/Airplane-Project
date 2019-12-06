@@ -34,25 +34,7 @@ public class AirplaneMidterm {
    public static double totalPrice;
     public static void main(String[] args) {
       
-      private static void readFile() throws Exception {
-		System.out.print("Reading file ...");
-
-		File file = new File(PATH);
-		System.out.println(file.exists());
-
-		BufferedReader reader = new BufferedReader(new FileReader(PATH));
-		reader.readLine();
-		for (int i = 0; i < NUMBER_OF_CODES; i++) {
-
-			String line = reader.readLine();
-
-			if (line == null) {
-
-				System.out.println("Reached end of file while reading");
-
-				reader.close();
-
-				return;
+      
       
         System.out.println("Welcome to American Airlines at O'Hare International Airport!");
         int ticketNum = 1;
@@ -76,6 +58,25 @@ public class AirplaneMidterm {
             //User's Destination City
             userTicket[i].destinationCity = uin("Destination City:");
             //User's Destination State
+		private static void readFile() throws Exception {
+		System.out.print("Reading file ...");
+
+		File file = new File(PATH);
+		System.out.println(file.exists());
+
+		BufferedReader reader = new BufferedReader(new FileReader(PATH));
+		reader.readLine();
+		for (int i = 0; i < NUMBER_OF_CODES; i++) {
+
+			String line = reader.readLine();
+
+			if (line == null) {
+
+				System.out.println("Reached end of file while reading");
+
+				reader.close();
+
+				return;
             do{
                 userTicket[i].destinationState = uin("Destination State(Valid 2-letter Postal Code):");
             }while(userTicket[i].destinationState.length() > 2 ||
