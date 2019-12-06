@@ -9,7 +9,13 @@
 //Modified: 10-31-19 (WE)
   
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWritter;
+import java.io.FileReader;
+import java.io.File;
+
 public class AirplaneMidterm {
+    private static final String PATH ="PostalCodes.txt";
     public static Scanner input = new Scanner(System.in);
     public static Ticket userTicket[] = new Ticket[1000];
     final static double firstClassPrice = 380;
@@ -25,6 +31,27 @@ public class AirplaneMidterm {
   
    public static double totalPrice;
     public static void main(String[] args) {
+      
+      private static void readFile() throws Exception {
+		System.out.print("Reading file ...");
+
+		File file = new File(PATH);
+		System.out.println(file.exists());
+
+		BufferedReader reader = new BufferedReader(new FileReader(PATH));
+		reader.readLine();
+		for (int i = 0; i < NUMBER_OF_CODES; i++) {
+
+			String line = reader.readLine();
+
+			if (line == null) {
+
+				System.out.println("Reached end of file while reading");
+
+				reader.close();
+
+				return;
+      
         System.out.println("Welcome to American Airlines at O'Hare International Airport!");
         int ticketNum = 1;
         String strNumUserTickets = uin("how many tickets you would like to purchase?:");
