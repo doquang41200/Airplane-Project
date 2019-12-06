@@ -17,6 +17,7 @@ import java.io.File;
 
 public class AirplaneMidterm {
     private static final String PATH ="PostalCodes.txt";
+    private static final int NUMBER_OF_CODES = 50;
     public static Scanner input = new Scanner(System.in);
     public static Ticket userTicket[] = new Ticket[1000];
     final static double firstClassPrice = 380;
