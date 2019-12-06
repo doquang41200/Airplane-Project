@@ -1,4 +1,4 @@
-//Jenna Lambert, William Eaton, Gabriel Peters, Cody Garthwaite
+//Jenna Lambert, William Eaton, Gabriel Peters, Cody Garthwaite, Nick Maretti
 //Created: 10-22-19 (JL)
 //Modified: 10-23-19 (JL)
 //Modified: 10-24-19 (JL)
@@ -7,6 +7,7 @@
 //Modified: 10-28-19 (JL)
 //Modified: 10-29-19 (JL)
 //Modified: 10-31-19 (WE)
+//Modified: 12-6-19 (CG)
   
 import java.util.Scanner;
 import java.io.BufferedReader;
