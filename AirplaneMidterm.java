@@ -1,4 +1,4 @@
-//Jenna Lambert, William Eaton, Gabriel Peters, Cody Garthwaite, Nick Maretti
+//Jenna Lambert, William Eaton, Gabriel Peters, Cody Garthwaite, Nick Maretti, Do Guang
 //Created: 10-22-19 (JL)
 //Modified: 10-23-19 (JL)
 //Modified: 10-24-19 (JL)
@@ -53,8 +53,10 @@ public class AirplaneMidterm {
             //User's Last Name
             userTicket[i].lastName = uin("Last Name:");
             //User's Age
+	do{
             String strAge = uin("Age:");
             userTicket[i].age= tryStrToInt(strAge);
+	}while(age <= 150);
             //User's Destination City
             userTicket[i].destinationCity = uin("Destination City:");
             //User's Destination State
@@ -208,13 +210,12 @@ public class AirplaneMidterm {
             else{
                  totalPrice+=0;
             }
-            System.out.println("Would you like to alcohol on your flight($15)? (y/n)");
-            String strAlcohol = input.nextLine();
-            
+            if(age >= 21){
+	    System.out.println("Would you like to alcohol on your flight($15)? (y/n)");
+            String strAlcohol = input.nextLine(){
             if(strAlcohol.equalsIgnoreCase("y") || strAlcohol.equalsIgnoreCase("yes")){
-                totalPrice+=alcoholPrice;
+		totalPrice+=alcoholPrice;
                 alcoholCount+=1;
-                
             }
             else if(strAlcohol.equalsIgnoreCase("n") || strAlcohol.equalsIgnoreCase("no") ){
                totalPrice+=0;
@@ -222,7 +223,7 @@ public class AirplaneMidterm {
             else{
                  totalPrice+=0;
             }
-            
+	    }
         }
         
       // System.out.printf("================================================\n================================================\nReceipt\nFirst Class Tickets: $%d x %d\nEconomy Class Tickets:\t $%d x %d\nWIFI:\t$ %d x %d\nIn Flight Meals:\t $%s x %s\nAlchohol Charge:\t $%d x %d\nTotal: %s\nMilitary?: %s\nDisability?: %s\n", firstClassPrice, firstClassCount, economyClassPrice, economyClassCount, wifiPrice, wifiCount, inFlightMealPrice, inFlightCount, alcoholPrice, alcoholCount, totalPrice); 
