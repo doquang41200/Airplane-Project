@@ -80,7 +80,7 @@ public class AirplaneMidterm {
             do{
                 userTicket[i].destinationState = uin("Destination State(Valid 2-letter Postal Code):");
             }while(userTicket[i].destinationState.length() > 2 ||
-                    !userTicket[i].destinationState.equalsIgnoreCase("AL") && 
+                    !userTicket[i].destinationState.equalsIgnoreCase("AL") && // enums all possible states lab 14 or 11 provice enum to look at use Enum.vaule of parse enum value from state 5 lines
                     !userTicket[i].destinationState.equalsIgnoreCase("AK") && 
                     !userTicket[i].destinationState.equalsIgnoreCase("AZ") && 
                     !userTicket[i].destinationState.equalsIgnoreCase("AR") && 
